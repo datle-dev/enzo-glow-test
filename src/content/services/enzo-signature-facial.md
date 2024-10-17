@@ -3,6 +3,7 @@ title: 'Enzo Signature Facial'
 summary: 'Relax with a double cleanse, gentle exfoliation, mask, rejuvenating serums, and moisturizers, followed by neck, décolleté, arm, and hand massages.'
 category: 'Skin Care'
 cost: 149
+deposit: 0
 duration: 60
 imgSrc: '../../assets/services/enzo-signature-facial.jpg'
 imgAlt: 'Enzo Signature Facial'

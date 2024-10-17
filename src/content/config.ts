@@ -16,7 +16,7 @@ const servicesCollection = defineCollection({
     summary: z.string(),
     category: z.string(),
     cost: z.number(),
-    deposit: z.number().optional(),
+    deposit: z.number(),
     duration: z.number(),
     imgSrc: image(),
     imgAlt: z.string(),

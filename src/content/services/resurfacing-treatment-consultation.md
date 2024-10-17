@@ -3,6 +3,7 @@ title: 'Resurfacing Treatment Consultation'
 summary: 'A session to determine appropriate treatments that address issues with skin texture, scarring, or pigmented areas.'
 category: 'Skin Care'
 cost: 25
+deposit: 0
 duration: 15
 imgSrc: '../../assets/services/resurfacing-treatment-consultation.jpg'
 imgAlt: 'Resurfacing Treatment Consultation'

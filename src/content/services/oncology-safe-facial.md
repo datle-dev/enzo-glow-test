@@ -3,6 +3,7 @@ title: 'Oncology Safe Facial'
 summary: 'Safe and certified facial service using oncology-approved products for individuals who have undergone cancer treatments. Complimentary hand, arm, and calf massage included.'
 category: 'Skin Care'
 cost: 60
+deposit: 0
 duration: 60
 imgSrc: '../../assets/services/oncology-safe-facial.jpg'
 imgAlt: 'Oncology Safe Facial'

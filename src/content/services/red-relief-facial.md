@@ -3,6 +3,7 @@ title: 'Red Relief Facial'
 summary: 'Cool and calm chronic redness to restore, hydrate, and rebalance your skin. Included is an arm, hand, neck, and décolleté massage.'
 category: 'Skin Care'
 cost: 165
+deposit: 0
 duration: 75
 imgSrc: '../../assets/services/red-relief-facial.jpg'
 imgAlt: 'Red Relief Facial'

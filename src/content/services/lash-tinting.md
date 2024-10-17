@@ -3,6 +3,7 @@ title: 'Lash Tinting'
 summary: "Quick and convenient service that's perfect for individuals with light-colored lashes."
 category: 'Lashes'
 cost: 28
+deposit: 0
 duration: 15
 imgSrc: '../../assets/services/tools.jpg'
 imgAlt: 'Lash Tinting'

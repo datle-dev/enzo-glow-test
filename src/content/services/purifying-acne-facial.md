@@ -3,6 +3,7 @@ title: 'Purifying Acne Facial'
 summary: 'For individuals with acne. May include a double cleanse, mask, extractions, serums, or specialty treatments.'
 category: 'Skin Care'
 cost: 135
+deposit: 0
 duration: 60
 imgSrc: '../../assets/services/purifying-acne-facial.jpg'
 imgAlt: 'Purifying Acne Facial'

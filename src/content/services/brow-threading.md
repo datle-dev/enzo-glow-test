@@ -3,6 +3,7 @@ title: 'Brow Threading'
 summary: 'Quick, mess-free brow hair removal using just cotton thread.'
 category: 'Threading'
 cost: 30
+deposit: 0
 duration: 10
 imgSrc: '../../assets/services/tools.jpg'
 imgAlt: 'Brow Threading'
