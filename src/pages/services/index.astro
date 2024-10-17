@@ -1,0 +1,53 @@
+---
+import { getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import ServiceCard from "@/components/ServiceCard.astro";
+
+const services = await getCollection("services");
+
+const pageTitle = "Services";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class="flex flex-col mx-auto mt-20 max-w-prose gap-8 px-8">
+    <h1>{pageTitle}</h1>
+    {
+      services.map(async (service) => {
+        // const { Content } = await service.render();
+        return (
+          // <ServiceCard
+          //   title={service.data.title}
+          //   imgSrc={service.data.imgSrc}
+          //   imgAlt={service.data.imgAlt}
+          //   cost={service.data.cost}
+          //   deposit={service.data.deposit}
+          //   duration={service.data.duration}
+          // >
+          //   <Content />
+          // </ServiceCard>
+          <div class="flex flex-col rounded">
+            <div class="flex justify-between mb-2 border-b border-neutral-700">
+              <h2 class="text-light">
+                <a href={`/services/${service.slug}`}>{service.data.title}</a>
+              </h2>
+              <p class="font-serif text-2xl text-peachyellow">${service.data.cost}</p>
+            </div>
+            <div class="font-serif flex justify-between mb-4">
+              <p>{service.data.duration} min</p>
+              <p>{service.data.deposit > 0 ? "$" + service.data.deposit + " deposit" : <></> }</p>
+            </div>
+            {/* <p>${service.data.cost}+</p> */}
+            
+            {/* <p>${service.data.deposit} deposit required</p> */}
+            <p class="text-light mb-4">{service.data.summary}</p>
+            <a href={`/services/${service.slug}`} class="uppercase tracking-wider group flex gap-2 items-center">
+              Learn More
+              <Icon name="ri:arrow-right-double-line" class="group-hover:translate-x-2 text-light group-hover:text-sage transition-all linear duration-200"/>
+            </a>
+          </div>
+        );
+      })
+    }
+  </div>
+</BaseLayout>

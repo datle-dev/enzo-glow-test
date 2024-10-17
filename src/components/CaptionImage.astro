@@ -1,0 +1,35 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import LightboxWrapper from "@/components/LightboxWrapper.astro";
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  caption: string;
+  loading?: "eager" | "lazy" | null | undefined;
+  decoding?: "async" | "auto" | "sync" | null | undefined;
+}
+
+const { src, alt, caption, loading = "lazy", decoding = "async" } = Astro.props;
+---
+
+<div class="flex flex-col items-center gap-1 mb-8 break-inside-avoid-column">
+  <div class="group relative overflow-hidden">
+    <LightboxWrapper fullsizeImageSrc={src}>
+      <Image
+        src={src}
+        alt={alt}
+        class="my-0"
+        loading={loading}
+        decoding={decoding}
+      />
+      <div
+        class="absolute inset-0 h-full w-full z-10 flex justify-center items-center text-white text-6xl bg-black/0 group-hover:bg-black/50 transition-all ease-in-out duration-300"
+      >
+        <Icon name="ri:expand-diagonal-line" class="opacity-0 group-hover:opacity-100 transition-all ease-in-out duration-300"/>
+      </div>
+    </LightboxWrapper>
+  </div>
+  <p class="my-0 text-sm italic">{caption}</p>
+</div>

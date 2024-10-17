@@ -1,0 +1,116 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Icon } from "astro-icon/components";
+import { HOME, INFO } from "@/consts";
+
+import heroImg from "@/assets/hero.jpg";
+import enzoSignatureFacialImg from "@/assets/services/enzo-signature-facial.jpg";
+import oncologySafeFacialImg from "@/assets/services/oncology-safe-facial.jpg";
+import purifyingAcneFacialImg from "@/assets/services/purifying-acne-facial.jpg";
+import toolsImg from "@/assets/services/tools.jpg";
+---
+
+<BaseLayout>
+  <div class="relative">
+    <Image src={heroImg} alt="hero" class="h-dvh w-full object-cover"/>
+    <div class="absolute inset-0 h-full w-full bg-black opacity-70">
+    </div>
+    <div class="absolute inset-0 h-full w-full flex flex-col justify-center items-center">
+      <p class="font-serif text-6xl p-8">Enzo Glow</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/services" class="flex justify-center items-center font-light tracking-widest h-16 w-36 uppercase border border-light p-4 backdrop-blur hover:bg-light/20 hover:text-light transition-all ease-in-out duration-300">Services</a>
+        <a href="/contact" class="flex justify-center items-center font-light tracking-widest h-16 w-36 uppercase border border-light p-4 backdrop-blur hover:bg-light/20 hover:text-light transition-all ease-in-out duration-300">
+          Book Now
+        </a>
+      </div>
+    </div>
+  </div>
+  <section class="p-8">
+    <div class="flex flex-col items-center gap-6">
+      <h1 class="text-6xl text-center">Glow with Enzo.</h1>
+      <p class="max-w-prose">
+        Skin care does not have to be complicated!
+        Allow us at Enzo Glow to simplify the process for you through education and suggestions that fit your lifestyle, skin concerns, and budget.
+        We focus on quality ingredients and product formulations, and we pay attention to technique, efficacy, and breakthroughs from research and development.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-6">
+        <a href="/about" class="flex justify-center items-center font-light tracking-widest h-16 w-72 uppercase border border-light p-4 backdrop-blur hover:bg-light/20 hover:text-light transition-all ease-in-out duration-300">
+          About Us
+        </a>
+        <a href="/contact" class="flex justify-center items-center font-light tracking-widest h-16 w-72 uppercase border border-light p-4 backdrop-blur hover:bg-light/20 hover:text-light transition-all ease-in-out duration-300">
+          Book Now
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="bg-taupe flex flex-col items-center p-6 gap-6">
+    <h2 class="text-6xl">Services</h2>
+    <div class="w-full flex flex-col sm:grid sm:grid-rows-2 sm:grid-cols-3 gap-4">
+      <div class="relative h-80 w-full row-start-1 row-end-2 col-start-1 col-end-3 rounded shadow-md shadow-night group overflow-hidden">
+        <Image src={enzoSignatureFacialImg} alt="facials" class="h-full w-full object-cover rounded group-hover:scale-110 transition-all ease-in-out duration-300" />
+        <div class="absolute inset-0 h-full w-full bg-black opacity-40 group-hover:opacity-20 transition-all ease-in-out duration-300 rounded">
+        </div>
+        <div class="absolute inset-0 h-full w-full flex justify-start items-end">
+          <p class="font-serif text-4xl p-4">Facials</p>
+        </div>
+      </div>
+      <div class="relative h-80 w-full row-start-1 row-end-2 col-start-3 col-end-4 rounded shadow-md shadow-night group overflow-hidden">
+        <Image src={oncologySafeFacialImg} alt="oncology safe" class="h-full w-full object-cover rounded group-hover:scale-110 transition-all ease-in-out duration-300" />
+        <div class="absolute inset-0 h-full w-full bg-black opacity-40 group-hover:opacity-20 transition-all ease-in-out duration-300 rounded">
+        </div>
+        <div class="absolute inset-0 h-full w-full flex justify-start items-end">
+          <p class="font-serif text-4xl p-4">Skin Therapy</p>
+        </div>
+      </div>
+      <div class="relative h-80 w-full row-start-2 row-end-3 col-start-1 col-end-2 rounded shadow-md shadow-night group overflow-hidden">
+        <Image src={purifyingAcneFacialImg} alt="threading" class="h-full w-full object-cover rounded group-hover:scale-110 transition-all ease-in-out duration-300" />
+        <div class="absolute inset-0 h-full w-full bg-black opacity-40 group-hover:opacity-20 transition-all ease-in-out duration-300 rounded">
+        </div>
+        <div class="absolute inset-0 h-full w-full flex justify-start items-end">
+          <p class="font-serif text-4xl p-4">Threading</p>
+        </div>
+      </div>
+      <div class="relative h-80 w-full row-start-2 row-end-3 col-start-2 col-end-4 rounded shadow-md shadow-night group overflow-hidden">
+        <Image src={toolsImg} alt="lash lift" class="h-full w-full object-cover rounded group-hover:scale-110 transition-all ease-in-out duration-300" />
+        <div class="absolute inset-0 h-full w-full bg-black opacity-40 group-hover:opacity-20 transition-all ease-in-out duration-300 rounded">
+        </div>
+        <div class="absolute inset-0 h-full w-full flex justify-start items-end">
+          <p class="font-serif text-4xl p-4">Lashes</p>
+        </div>
+      </div>
+    </div>
+    <a href="/services" class="flex justify-center items-center font-light tracking-widest h-16 w-72 uppercase border border-light p-4 backdrop-blur hover:bg-light/20 hover:text-light transition-all ease-in-out duration-300">
+      Explore Our Services
+    </a>
+  </section>
+  <section class="flex flex-col items-center py-6">
+    <div class="prose px-6">
+      <h2 class="text-6xl mb-6 text-center">Special Treatments</h2>
+      <p class="max-w-prose">
+        Enzo Glow specializes in non-invasive treatments to minimize recovery time and provide a relaxing experience.
+        We believe in covering every detail and thorough consultations in order to curate the best session for you!
+      </p>
+      <p class="max-w-prose">
+        We proudly offer oncology-approved services for those undergoing cancer treatment with certification from Oncology Spa Solutions.
+        Through training and licensed practice, we aim to reduce contradicting medical therapies and possible side effects.
+        Enzo Glow also collaborates with medical professionals to work in tandem with your treatments and schedules.
+      </p>
+    </div>
+    <a href="/contact" class="flex justify-center items-center font-light tracking-widest h-16 w-72 uppercase border border-light p-4 backdrop-blur hover:bg-light/20 hover:text-light transition-all ease-in-out duration-300">
+      Book Now
+    </a>
+  </section>
+  <section class="bg-taupe flex flex-col gap-8 items-center p-6">
+    <h2 class="text-6xl mb-6">Quality Products</h2>
+    <p class="max-w-prose">Enzo Glow proudly uses professional Korean skin care lines, which prioritize gentle process that allow the skin to glow with health!</p>
+    <div class="grid grid-rows-3 grid-cols-1 sm:grid-rows-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-light/50">
+      <p class="text-xl max-w-72 text-center p-8">Gentle, naturally-derived products</p>
+      <p class="text-xl max-w-72 text-center p-8">Clinically proven and backed by research</p>
+      <p class="text-xl max-w-72 text-center p-8">Focus on preventative skin care</p>
+    </div>
+    <a href="/contact" class="flex justify-center items-center font-light tracking-widest h-16 w-72 uppercase border border-light p-4 backdrop-blur hover:bg-light/20 hover:text-light transition-all ease-in-out duration-300">
+      Contact Us
+    </a>
+  </section>
+</BaseLayout>

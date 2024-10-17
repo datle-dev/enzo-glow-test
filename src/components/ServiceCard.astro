@@ -1,0 +1,60 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  title: string;
+  imgSrc: ImageMetadata;
+  imgAlt: string;
+  cost: number,
+  deposit?: number,
+  duration: number,
+}
+
+const {
+  title,
+  imgSrc,
+  imgAlt,
+  cost,
+  deposit = 0,
+  duration,
+} = Astro.props;
+
+const hasDeposit = deposit > 0;
+---
+
+<div
+  class="flex flex-col max-w-sm mb-4 break-inside-avoid-column bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+>
+  <a href="#">
+    <Image
+      src={imgSrc}
+      alt={imgAlt}
+      class="aspect-video object-cover"
+    />
+  </a>
+  <div class="grow text-sm p-5">
+    <a href="#">
+      <h5
+        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+      >
+        {title}
+      </h5>
+    </a>
+    <div class="prose mb-3 font-normal text-gray-700 dark:text-gray-400">
+      <slot />
+    </div>
+  </div>
+  <div class="flex justify-between items-end text-sm p-5">
+    <div class="flex flex-col">
+      <p>
+        ${cost}+
+      </p>
+      <p>
+        {hasDeposit ? "$" + deposit + " deposit required" : <></> }
+      </p>
+    </div>
+    <p>
+      {duration}+ minutes
+    </p>
+  </div>
+</div>

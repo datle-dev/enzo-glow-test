@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* html {
+    scrollbar-gutter: stable;
+  } */
+
+  body {
+    /* @apply font-sans bg-neutral-200 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300; */
+    /* @apply bg-almond dark:bg-dark text-stone-700 dark:text-stone-200; */
+    /* @apply bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-200; */
+    @apply bg-night text-light;
+  }
+
+  header {
+    @apply text-light;
+  }
+
+  footer {
+    /* @apply bg-neutral-900 text-neutral-200; */
+    @apply bg-night text-light/80;
+  }
+
+  /* h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply font-serif;
+    } */
+
+  h1,
+  h2 {
+    @apply font-serif;
+  }
+
+  h1 {
+    @apply text-4xl font-extrabold;
+  }
+
+  h2 {
+    @apply text-2xl font-bold;
+  }
+
+  h3 {
+    @apply text-xl font-semibold;
+  }
+
+  h4 {
+    @apply text-lg font-semibold;
+  }
+
+  .prose p {
+    @apply mb-4;
+  }
+  
+  a {
+    @apply hover:text-sage;
+  }
+
+  .prose a {
+    @apply underline;
+  }
+
+  /* a {
+    @apply underline underline-offset-2 decoration-2 hover:opacity-50 transition-all duration-200;
+  } */
+
+  /* a::after {
+    @apply relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left;
+  } */
+
+  /* a {
+      @apply font-semibold underline hover:text-pink-500 hover:decoration-pink-500;
+    } */
+
+  /* .prose img {
+      @apply rounded-lg;
+    } */
+
+  /* code {
+      @apply inline-block;
+    } */
+
+  /* mark {
+      @apply px-1 rounded bg-pink-500;
+    } */
+
+  /* .prose
+      :not(pre)
+      :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+      @apply bg-neutral-200 dark:bg-neutral-900 px-1 rounded;
+    } */
+  :root {
+    --radius: 0.5rem;
+  }
+}

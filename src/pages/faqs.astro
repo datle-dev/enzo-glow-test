@@ -1,0 +1,38 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Accordion from "@/components/Accordion.astro";
+import AccordionItems from "@/components/AccordionItems.astro";
+
+const faqBookingEntries = await getCollection("faq", ({ id }) => {
+  return id.startsWith("booking/");
+});
+const faqServicesEntries = await getCollection("faq", ({ id }) => {
+  return id.startsWith("services/");
+});
+const faqProductsEntries = await getCollection("faq", ({ id }) => {
+  return id.startsWith("products/");
+});
+
+const pageTitle = "FAQs";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class="w-full flex flex-col mx-auto mt-20 max-w-prose px-6">
+    <Accordion>
+      <section class="mb-12">
+        <h2 class="text-4xl">Booking</h2>
+        <AccordionItems items={faqBookingEntries} indOffset={0} />
+      </section>
+      <section class="mb-12">
+        <h2 class="text-4xl">Services</h2>
+        <AccordionItems items={faqServicesEntries} indOffset={10} />
+      </section>
+      <section class="mb-12">
+        <h2 class="text-4xl">Products</h2>
+        <AccordionItems items={faqProductsEntries} indOffset={10} />
+      </section>
+    </Accordion>
+  </div>
+</BaseLayout>
+<!-- <script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script> -->

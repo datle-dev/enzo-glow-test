@@ -1,0 +1,24 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const pageTitle = "Cancellation Policy";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <section class="prose max-w-prose mx-auto mt-20">
+    <h1 class="mb-6">{pageTitle}</h1>
+    <p>
+      All no-shows and cancellations made less than 24 hours of scheduled appointments will be charged an additional 20% of the service cost.
+    </p>
+    <p>Deposits are non-refundable.</p>
+    <p>
+      Our products, equipment, and time in the clinic is valuable, so we ask that
+      you plan accordingly or communicate with us with ample notice to avoid
+      product waste.
+    </p>
+    <p>
+      There will be reminders leading up to your appointment to give you the
+      opportunity to reschedule if needed.
+    </p>
+  </section>
+</BaseLayout>

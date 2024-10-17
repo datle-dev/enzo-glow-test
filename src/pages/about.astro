@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import CaptionImage from "@/components/CaptionImage.astro";
+
+import portraitImg from "@/assets/portrait.jpg";
+
+const pageTitle = "About";
+---
+<BaseLayout pageTitle={pageTitle}>
+  <section class="prose mx-auto mt-20">
+    <div class="flex flex-col items-center sm:items-start sm:grid sm:grid-cols-2 gap-6 px-6">
+      <div class="h-80 w-80 sm:justify-self-end object-fill rounded shadow-md shadow-night" >
+        <Image src={portraitImg} alt="mai nguyen" class="h-full w-full sm:justify-self-end object-cover rounded" />
+      </div>
+      <div class="max-w-prose">
+        <h1>Meet the Owner</h1>
+        <h2>Mai Nguyen</h2>
+        <p>Licensed Aesthetician certified in oncology-safe esthetics</p>
+        <p class="mx-auto">
+          I am Mai, owner of Enzo Glow!
+          I take pride in helping individuals of all skin types achieve visible results with a gentle, holistic, and science-proven approach. 
+        </p>
+        <p>
+          Here at Enzo Glow, we believe custom-tailored services are essential!
+          Our goal is to educate every step of the way so that you can take care of your skin based on your lifestyle, medical status, and environmental factors.
+          It is not about perfection—it is about experiencing self love, commitment, and pride from your treatments and home care.
+          We want you to love the skin that you are in!
+        </p>
+        <p>
+          In my free time, I enjoy drawing, painting, and archery.
+        </p>
+      </div>
+    </div>
+    <!-- <p>
+      We take great pride in helping individuals of all skin types and concerns to achieve visible results through a holistic, gentle, and science-proven approach that is consistently focused on the overall health of the skin.
+      We believe that custom tailored services are essential for effective treatments, as there is no generic protocol to sufficiently meet everybody&apos;s needs.
+      Additionally, Enzo Glow is all about educating you every step of the way to ensure that you understand how to take care of your skin based on your current lifestyle, medical status, and environmental factors.
+      In short, we want you to LOVE the skin that you are in- we are not about “perfection”, it&apos;s all about experiencing self love, commitment, and individual pride from your treatment sessions and your home care.
+    </p>
+    <p>
+      Enzo Glow believes that skin care does not have to be complicated, and we simplify the process for you through basic client education and minimal suggestions that fit your lifestyle, skin concerns, and budget!
+      We focus on quality ingredients, product formulation, and pay attention to technique, efficacy, and breakthroughs from research and development.
+    </p>
+    <p>
+      Enzo Glow specializes in non-invasive treatments to minimize recovery periods and provide a relaxing experience so that you can enjoy your entire time at our spa.
+      We use advanced modalities to supplement our services when deemed appropriate for your skin&apos;s current condition.
+      We are all about the details and provide a thorough consultation to curate the best session for you!
+    </p>
+    <p>
+      We are proud to offer oncology-approved services for our community who are currently going through cancer treatment with certification from Oncology Spa Solutions.
+      Cancer and cancer treatment therapies can forever change the body&apos;s functioning, so it is imperative that patients seek skin treatments only from licensed professionals who are specifically trained to service them.
+      By doing so, the risk of contraindicating medical therapies, triggering painful side effects, or diseases such as lymphedema are reduced.
+      Enzo Glow also responsibly notifies and collaborates with respective medical professionals to work in tandem with your treatment and treatment schedules.
+    </p>
+    <p>
+      We at Enzo Glow proudly use professional Korean skin care lines, as the overall philosophy mirrors our methodology with gentle and naturally derived products that are clinically proven and research supplemented to nourish the skin while visibly addressing skin concerns.
+      One of the biggest advantages of Korean skin care is that it is also focused on the prevention of skin issues instead of just treating problems when encountered.
+      We are excited to introduce its array of benefits for everyone in our diverse community.
+      Our knowledge of ingredients and regimen structuring. Instead of harsh treatments that can cause other skin issues to arise, Korean skin care is all about a gentle process that allows the skin to glow with health throughout the entire journey!
+      Anyone can buy products or offer instant gratification, but skin health is a wealth from ingredient knowledge and consistency, and Enzo Glow invites you to personally experience this satisfaction and health reward.
+    </p> -->
+  </section>
+</BaseLayout>

@@ -1,0 +1,47 @@
+---
+import { getImage } from 'astro:assets';
+
+export interface Props {
+  fullsizeImageSrc: ImageMetadata,
+  classes?: string,
+  lightboxGallery?: string;
+  lightboxTitle?: string,
+  lightboxDescription?: string,
+  lightboxDescPosition?: string,
+  lightboxType?: string, 
+  lightboxEffect?: string,
+  lightboxZoomable?: boolean,
+  lightboxDraggable?: boolean
+}
+
+const {
+  fullsizeImageSrc,
+  classes,
+  lightboxGallery,
+  lightboxTitle,
+  lightboxDescription,
+  lightboxDescPosition,
+  lightboxType = 'image',
+  lightboxEffect,
+  lightboxZoomable,
+  lightboxDraggable,
+  ...rest
+} = Astro.props;
+
+const optimizedImageSrc = await getImage({src: fullsizeImageSrc, format: 'webp'})
+---
+
+<a href={optimizedImageSrc.src} 
+  class:list={[classes, "glightbox"]} 
+  data-gallery={lightboxGallery}
+  data-title={lightboxTitle}
+  data-description={lightboxDescription}
+  data-desc-position={lightboxDescPosition}
+  data-type={lightboxType}
+  data-effect={lightboxEffect}
+  data-zoomable={lightboxZoomable}
+  data-draggable={lightboxDraggable}
+  {...rest}
+>
+  <slot />
+</a>

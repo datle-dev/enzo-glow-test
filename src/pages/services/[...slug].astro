@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const serviceEntries = await getCollection('services');
+  return serviceEntries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<BaseLayout pageTitle={entry.data.title}>
+  <section class="mx-auto max-w-prose mt-20">
+    <h1 class="mb-6">{entry.data.title}</h1>
+    <div class="prose">
+      <Content />
+    </div>
+    <a href="/contact" class="flex justify-center items-center font-light tracking-widest h-16 w-72 uppercase border border-light p-4 backdrop-blur hover:bg-light/20 hover:text-light transition-all ease-in-out duration-300">
+      Book Now
+    </a>
+  </section>
+</BaseLayout>
