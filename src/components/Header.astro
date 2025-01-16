@@ -1,0 +1,118 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import { LINKS, SOCIALS } from "@/consts.ts";
+import enzoGlowLogo from "@/assets/Enzo-Glow-Logo.svg";
+import enzoGlowLogoLeaf from "@/assets/Enzo-Glow-Logo-Leaf.svg";
+---
+
+<header
+  class="fixed w-full max-h-24 border-b border-b-light/10 transition-all ease-in-out duration-300s z-20 px-2 md:px-4 py-2"
+>
+  <nav
+    x-data="{ mobileMenuIsOpen: false }"
+    @click.away="mobileMenuIsOpen = false"
+    class="flex items-center justify-between"
+    aria-label="menu"
+  >
+    <a href="/">
+      <Image
+        src={enzoGlowLogo}
+        alt="icon"
+        class="h-16 w-min hidden md:block"
+      />
+      <Image
+        src={enzoGlowLogoLeaf}
+        alt="icon"
+        class="size-10 block md:hidden"
+      />
+    </a>
+    <div>
+      <div class="hidden md:flex items-center gap-4">
+        <ul class="flex gap-4 uppercase">
+          {
+            LINKS.map((link) => (
+              <li>
+                <a href={link.HREF}>{link.TEXT}</a>
+              </li>
+            ))
+          }
+        </ul>
+        <div class="flex gap-4">
+          {
+            SOCIALS.map((social) => (
+              <a href={social.HREF} class="">
+                <Icon name={social.ICON} class="size-8" />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+      <button
+        @click="mobileMenuIsOpen = !mobileMenuIsOpen"
+        :aria-expanded="mobileMenuIsOpen"
+        :class="mobileMenuIsOpen ? 'z-20' : null"
+        type="button"
+        class="flex md:hidden"
+        aria-label="mobile menu"
+        aria-controls="mobileMenu"
+      >
+        <Icon
+          x-cloak
+          x-show="!mobileMenuIsOpen"
+          name="ri:menu-line"
+          class="size-10 text-light"
+          aria-hidden="true"
+        />
+      </button>
+      <div
+        x-cloak
+        x-show="mobileMenuIsOpen"
+        x-transition:enter="transition motion-reduce:transition-none ease-out duration-300"
+        x-transition:enter-start="-translate-y-full"
+        x-transition:enter-end="translate-y-0"
+        x-transition:leave="transition motion-reduce:transition-none ease-out duration-300"
+        x-transition:leave-start="translate-y-0"
+        x-transition:leave-end="-translate-y-full"
+        id="mobileMenu"
+        class="bg-night fixed max-h-svh inset-x-0 top-0 flex flex-col md:hidden px-2 pt-2 pb-8 gap-8 border-b border-b-light/10"
+      >
+        <button
+          @click="mobileMenuIsOpen = !mobileMenuIsOpen"
+          :aria-expanded="mobileMenuIsOpen"
+          :class="mobileMenuIsOpen ? 'z-20' : null"
+          type="button"
+          class="flex md:hidden self-end"
+          aria-label="mobile menu"
+          aria-controls="mobileMenu"
+        >
+          <Icon
+            x-cloak
+            x-show="mobileMenuIsOpen"
+            name="ri:close-line"
+            class="size-10 text-light"
+            aria-hidden="true"
+          />
+        </button>
+        <ul class="flex flex-col items-center text-3xl gap-4">
+          {
+            LINKS.map((link) => (
+              <li>
+                <a href={link.HREF}>{link.TEXT}</a>
+              </li>
+            ))
+          }
+        </ul>
+        <div class="flex justify-center gap-8">
+          {
+            SOCIALS.map((social) => (
+              <a href={social.HREF} class="">
+                <Icon name={social.ICON} class="size-8" />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

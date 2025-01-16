@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { INFO } from "@/consts.ts";
+
+import LinkHomePage from "@/components/LinkHomePage.astro";
+import redReliefFacialImg from "@/assets/services/red-relief-facial.jpg";
+
+const pageTitle = "Contact";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <section class="mx-auto">
+    <div class="relative h-[480px] w-full">
+      <Image
+        src={redReliefFacialImg}
+        alt="facials"
+        class="h-full w-full object-cover"
+      />
+      <div class="absolute inset-0 h-full w-full bg-black opacity-60"></div>
+      <div
+        class="absolute inset-0 h-full w-full flex flex-col justify-center items-center"
+      >
+        <p class="font-serif text-center text-4xl p-4">
+          Call or email to book today!
+        </p>
+        <div class="flex flex-col gap-4">
+          <LinkHomePage href={INFO.PHONE_HREF} text={INFO.PHONE} />
+          <LinkHomePage href={INFO.EMAIL_HREF} text={INFO.EMAIL} />
+        </div>
+      </div>
+    </div>
+    <div class="px-6">
+      <p class="max-w-prose mx-auto mt-6">
+        Please reach out with any questions about our services or concerns about
+        your skin care!
+      </p>
+    </div>
+  </section>
+</BaseLayout>

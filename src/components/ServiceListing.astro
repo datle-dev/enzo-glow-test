@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  items: CollectionEntry<"services">[];
+}
+
+import ServiceModal from "./ServiceModal.astro";
+
+const { items } = Astro.props;
+---
+
+{
+  items.map(async (item) => {
+    const { Content } = await item.render();
+    return (
+      <ServiceModal
+        title={item.data.title}
+        cost={item.data.cost}
+        summary={item.data.summary}
+        duration={item.data.duration}
+      >
+        <Content />
+      </ServiceModal>
+    );
+  })
+}

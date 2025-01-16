@@ -1,0 +1,36 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import CaptionImage from "@/components/CaptionImage.astro"
+
+import lashLift1 from "@/assets/portfolio/lash-lift-01.jpeg";
+import lashLift2 from "@/assets/portfolio/lash-lift-02.jpeg";
+import browThreadingMale from "@/assets/portfolio/brow-threading-male.jpeg"
+
+const pageTitle = "Portfolio";
+---
+<BaseLayout pageTitle={pageTitle}>
+  <section class="mx-auto mt-28 px-6">
+    <!-- <h1 class="text-6xl max-w-prose">Portfolio</h1> -->
+    <div class="columns-1 sm:columns-2 lg:columns-3">
+      <CaptionImage
+        src={lashLift1}
+        alt="lash lift example 1"
+        caption="Lash lift for female client, example #1"
+      />
+      <CaptionImage
+        src={lashLift2}
+        alt="lash lift example 2"
+        caption="Lash lift for female client, example #2"
+      />
+      <CaptionImage
+        src={browThreadingMale}
+        alt="brow threading male"
+        caption="Brow threading for male client"
+      />
+    </div>
+  </section>
+</BaseLayout>
+
+
+
+

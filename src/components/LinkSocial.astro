@@ -1,0 +1,13 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  href: string;
+  icon: string;
+}
+
+const { href, icon } = Astro.props;
+---
+<a href={href} class="flex justify-center items-center tracking-widest h-16 w-16 uppercase border border-light p-4 backdrop-blur hover:bg-light hover:text-night transition-all ease-in-out duration-300">
+  <Icon name={icon} class="size-8" />
+</a>

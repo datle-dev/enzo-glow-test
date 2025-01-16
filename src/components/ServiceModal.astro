@@ -1,0 +1,69 @@
+---
+import { Icon } from "astro-icon/components";
+
+import LinkHomePage from "./LinkHomePage.astro";
+
+interface Props {
+  title: string,
+  cost: number,
+  summary: string,
+  duration: number,
+}
+
+const {
+  title,
+  cost,
+  summary,
+  duration,
+} = Astro.props;
+---
+
+<article class="flex flex-col gap-2">
+  <div x-data="{modalIsOpen: false}">
+    <button @click="modalIsOpen = true" type="button" class="flex justify-between w-full hover:bg-light/20 transition-all duration-300 ease-in-out p-2">
+      <h3 class="text-2xl text-left">{title}</h3>
+      <p class="text-2xl">${cost}</p>
+    </button>
+    <div
+      x-cloak
+      x-show="modalIsOpen"
+      x-transition.opacity.duration.300ms
+      x-trap.inert.noscroll="modalIsOpen"
+      @keydown.esc.window="modalIsOpen = false"
+      @click.self="modalIsOpen = false"
+      class="fixed inset-0 z-30 flex items-end sm:items-center justify-center bg-night/20 backdrop-blur-md p-4 pb-8 lg:p-8"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="defaultModalTitle"
+    >
+      <!-- Modal Dialog -->
+      <div
+        x-show="modalIsOpen"
+        x-transition:enter="transition ease-out duration-200 delay-100 motion-reduce:transition-opacity"
+        x-transition:enter-start="opacity-0 scale-50"
+        x-transition:enter-end="opacity-100 scale-100"
+        class="max-h-96 md:max-h-svh flex flex-col gap-4 overflow-auto max-w-lg border border-light/20 bg-night p-4"
+      >
+        <!-- Dialog Header -->
+        <section class="flex justify-between items-center">
+          <h3 class="text-2xl">{title}</h3>
+          <button @click="modalIsOpen = false" aria-label="close modal" class="hover:text-enzo-green-light transition-all duration-300 ease-in-out">
+            <Icon
+              name="ri:close-line"
+              class="size-10"
+              aria-hidden="true"
+            />
+          </button>
+        </section>
+        <section class="prose">
+          <slot />
+        </section>
+        <section class="flex flex-col items-center">
+          <LinkHomePage href="/contact" text="Book Now" />
+        </section>
+      </div>
+    </div>
+  </div>
+  <p class="px-2">{summary}</p>
+  <p class="text-sm text-light/50 px-2">{duration} min</p>
+</article>

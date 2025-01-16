@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import { LINKS, INFO, SOCIALS } from "@/consts.ts";
+import enzoGlowLogo from "@/assets/Enzo-Glow-Logo.svg";
+---
+
+<footer class="w-full text-sm text-light/50 flex flex-col items-center gap-8 pt-8 pb-16">
+  <Image src={enzoGlowLogo} alt="enzo glow" class="h-16 w-min" />
+  <div class="flex flex-col items-center gap-2">
+    <a href={INFO.PHONE_HREF}>{INFO.PHONE}</a>
+    <a href={INFO.EMAIL_HREF}>{INFO.EMAIL}</a>
+  </div>
+  <nav class="">
+    <ul class="flex flex-col items-center md:flex-row gap-4">
+      {
+        LINKS.map((link) => (
+          <li>
+            <a href={link.HREF}>{link.TEXT}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+  <div class="flex gap-8">
+  {
+    SOCIALS.map((social) => (
+      <a href={social.HREF} class="">
+        <Icon name={social.ICON} class="size-8" />
+      </a>
+    ))
+  }
+  </div>
+  <p class="text-sm">&copy; 2024 Enzo Glow. All rights reserved.</p>
+</footer>
