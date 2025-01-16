@@ -5,4 +5,4 @@ order: 2
 ---
 
 We do not have regular hours.
-Please [contact us](/contact) to book an appointment.
+Please [contact us](/enzo-glow-test/contact) to book an appointment.
