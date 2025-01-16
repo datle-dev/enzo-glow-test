@@ -38,27 +38,27 @@ export const CONTACT: Page = {
 export const LINKS: Links = [
   {
     TEXT: "Home",
-    HREF: "/",
+    HREF: "/enzo-glow-test/",
   },
   {
     TEXT: "About",
-    HREF: "/about",
+    HREF: "/enzo-glow-test/about",
   },
   {
     TEXT: "Services",
-    HREF: "/services",
+    HREF: "/enzo-glow-test/services",
   },
   // {
   //   TEXT: "Portfolio",
-  //   HREF: "/portfolio",
+  //   HREF: "/enzo-glow-test/portfolio",
   // },
   {
     TEXT: "FAQs",
-    HREF: "/faqs",
+    HREF: "/enzo-glow-test/faqs",
   },
   {
     TEXT: "Contact",
-    HREF: "/contact",
+    HREF: "/enzo-glow-test/contact",
   },
 ];
 
