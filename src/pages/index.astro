@@ -8,15 +8,25 @@ import heroImg from "@/assets/hero.jpg";
 import enzoGlowLogo from "@/assets/Enzo-Glow-Logo.svg";
 
 import ServiceCardGrid from "@/components/ServiceCardGrid.astro";
+
+const pageTitle = "Home";
 ---
 
-<BaseLayout>
+<BaseLayout pageTitle={pageTitle}>
   <section class="relative">
-    <Image src={heroImg} alt="hero" class="h-dvh w-full object-cover"/>
-    <div class="absolute inset-0 h-full w-full bg-black opacity-70">
-    </div>
-    <div class="absolute inset-0 h-full w-full flex flex-col justify-center items-center">
-      <Image src={enzoGlowLogo} alt="enzo glow logo" class="h-32 w-min my-2" />
+    <Image src={heroImg} alt="hero" class="h-dvh w-full object-cover" />
+    <div class="absolute inset-0 h-full w-full bg-black opacity-70"></div>
+    <div
+      class="absolute inset-0 h-full w-full flex flex-col justify-center items-center gap-32"
+    >
+      <div class="flex flex-col gap-2 items-center">
+        <Image
+          src={enzoGlowLogo}
+          alt="enzo glow logo"
+          class="h-40 w-min my-2"
+        />
+        <p class="text-2xl font-light">Gentle, Holistic, Korean Skincare</p>
+      </div>
       <div class="flex flex-col gap-4">
         <LinkHomePage href="/enzo-glow-test/services" text="Services" />
         <LinkHomePage href="/enzo-glow-test/contact" text="Book Now" />
@@ -24,18 +34,20 @@ import ServiceCardGrid from "@/components/ServiceCardGrid.astro";
     </div>
   </section>
   <section class="flex flex-col items-center gap-6 p-8">
-      <h2 class="text-6xl text-center">Glow with Enzo.</h1>
-      <div class="prose max-w-prose">
-        <p>
-          Skin care does not have to be complicated!
-          Allow us at Enzo Glow to simplify the process for you through education and suggestions that fit your lifestyle, skin concerns, and budget.
-          We focus on quality ingredients and product formulations, and we pay attention to technique, efficacy, and breakthroughs from research and development.
-        </p>
-      </div>
-      <div class="flex flex-col sm:flex-row gap-6">
+    <h2 class="text-6xl text-center">Glow with Enzo.</h2>
+    <div class="prose max-w-prose">
+      <p>
+        Skin care does not have to be complicated! Allow us at Enzo Glow to
+        simplify the process for you through education and suggestions that fit
+        your lifestyle, skin concerns, and budget. We focus on quality
+        ingredients and product formulations, and we pay attention to technique,
+        efficacy, and breakthroughs from research and development.
+      </p>
+    </div>
+    <div class="flex flex-col sm:flex-row gap-6">
       <LinkHomePage href="/enzo-glow-test/about" text="About" />
       <LinkHomePage href="/enzo-glow-test/contact" text="Book Now" />
-      </div>
+    </div>
   </section>
   <section class="bg-taupe flex flex-col items-center gap-6 p-8">
     <h2 class="text-6xl text-center">Services</h2>
@@ -43,29 +55,58 @@ import ServiceCardGrid from "@/components/ServiceCardGrid.astro";
     <LinkHomePage href="/enzo-glow-test/services" text="Explore Our Services" />
   </section>
   <section class="flex flex-col items-center gap-6 p-8">
-      <h2 class="text-6xl text-center">Special Treatments</h2>
-      <div class="prose max-w-prose">
-        <p>
-          Enzo Glow specializes in non-invasive treatments to minimize recovery time and provide a relaxing experience.
-          We believe in covering every detail and thorough consultations in order to curate the best session for you!
-        </p>
-        <p>
-          We proudly offer oncology-approved services for those undergoing cancer treatment with certification from Oncology Spa Solutions.
-          Through training and licensed practice, we aim to reduce contradicting medical therapies and possible side effects.
-          Enzo Glow also collaborates with medical professionals to work in tandem with your treatments and schedules.
-        </p>
-      </div>
+    <h2 class="text-6xl text-center">Skin Health-Focused</h2>
+    <div class="prose max-w-prose">
+      <p>
+        Welcome to Enzo Glow! I take great pride in helping individuals of all
+        skin types and concerns to achieve visible results through a holistic,
+        gentle, and evidence-based approach that is consistently focused on the
+        overall health of the skin. Enzo Glow offers custom tailored services
+        for effective treatments. I will also take the time to educate you to
+        ensure that you understand how to take care of your skin based on your
+        current lifestyle, medical status, and environmental factors.
+      </p>
+      <p>
+        I want you to love YOUR skin! It is not about chasing “perfection”,
+        rather all about committing to your health and consistency through
+        treatment sessions and home care. It is an honor to be a part of your
+        journey and I look forward to helping you celebrate the best version of
+        yourself.
+      </p>
+      <p>
+        Skin care does NOT have to be complicated or expensive! I simplify the
+        process for you through basic client education and minimal suggestions
+        that fit your lifestyle, skin concerns, and budget. I focus on quality
+        ingredients, product formulation, and routine customization.
+      </p>
+      <p>
+        In addition to our services, Enzo Glow proudly offers oncology-approved
+        facial and body services for those undergoing cancer treatment with
+        certification from Oncology Spa Solutions. Through training and licensed
+        practice, Enzo Glow specializes in providing relief to medically
+        reactive skin.
+      </p>
+    </div>
     <LinkHomePage href="/enzo-glow-test/contact" text="Book Now" />
   </section>
   <section class="bg-taupe flex flex-col items-center gap-6 p-8">
     <h2 class="text-6xl text-center">Quality Products</h2>
     <div class="max-w-prose">
-      <p>Enzo Glow proudly uses professional Korean skin care lines, which prioritize gentle process that allow the skin to glow with health!</p>
+      <p>
+        Enzo Glow proudly uses professional Korean skin care lines, which
+        prioritize gentle ingredients and services to nourish the skin and bring
+        out the best version of you.
+      </p>
     </div>
-    <div class="grid grid-rows-3 grid-cols-1 sm:grid-rows-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-light/50">
-      <p class="text-xl max-w-72 text-center p-8">Gentle, naturally-derived products</p>
-      <p class="text-xl max-w-72 text-center p-8">Clinically proven and backed by research</p>
-      <p class="text-xl max-w-72 text-center p-8">Focus on preventative skin care</p>
+    <div
+      class="grid grid-rows-2 grid-cols-1 sm:grid-rows-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-light/50"
+    >
+      <p class="text-xl max-w-72 text-center p-8">
+        Gentle, naturally derived products
+      </p>
+      <p class="text-xl max-w-72 text-center p-8">
+        Preventative focused approach
+      </p>
     </div>
     <LinkHomePage href="/enzo-glow-test/services" text="Contact Us" />
   </section>

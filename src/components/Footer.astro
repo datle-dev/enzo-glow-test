@@ -5,11 +5,24 @@ import { LINKS, INFO, SOCIALS } from "@/consts.ts";
 import enzoGlowLogo from "@/assets/Enzo-Glow-Logo.svg";
 ---
 
-<footer class="w-full text-sm text-light/50 flex flex-col items-center gap-8 pt-8 pb-16">
+<footer
+  class="w-full text-sm text-light/50 flex flex-col items-center gap-8 pt-8 pb-16"
+>
   <Image src={enzoGlowLogo} alt="enzo glow" class="h-16 w-min" />
   <div class="flex flex-col items-center gap-2">
     <a href={INFO.PHONE_HREF}>{INFO.PHONE}</a>
     <a href={INFO.EMAIL_HREF}>{INFO.EMAIL}</a>
+  </div>
+  <div class="flex flex-col items-center text-center gap-2">
+    <div>
+      <p>Great Wave Acupuncture & Wellness</p>
+      <p>Circle Health Westford Building</p>
+    </div>
+    <div>
+      <p>198 Littleton Rd</p>
+      <p>Suite 202</p>
+      <p>Westford, MA 01886</p>
+    </div>
   </div>
   <nav class="">
     <ul class="flex flex-col items-center md:flex-row gap-4">
@@ -23,13 +36,13 @@ import enzoGlowLogo from "@/assets/Enzo-Glow-Logo.svg";
     </ul>
   </nav>
   <div class="flex gap-8">
-  {
-    SOCIALS.map((social) => (
-      <a href={social.HREF} class="">
-        <Icon name={social.ICON} class="size-8" />
-      </a>
-    ))
-  }
+    {
+      SOCIALS.map((social) => (
+        <a href={social.HREF} class="">
+          <Icon name={social.ICON} class="size-8" />
+        </a>
+      ))
+    }
   </div>
   <p class="text-sm">&copy; 2024 Enzo Glow. All rights reserved.</p>
 </footer>

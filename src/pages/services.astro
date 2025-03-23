@@ -1,8 +1,18 @@
 ---
 import { getCollection } from "astro:content";
-import BaseLayout from "@/layouts/BaseLayout.astro";
 
-const services = await getCollection("services");
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import LinkHomePage from "@/components/LinkHomePage.astro";
+
+let services = await getCollection("services");
+const mainServices = services
+  .filter((service) => {
+    return !service.data.isAddOn;
+  })
+  .sort((a, b) => a.data.order - b.data.order);
+const addOns = services.filter((service) => {
+  return service.data.isAddOn;
+});
 
 import ServiceListing from "@/components/ServiceListing.astro";
 
@@ -10,37 +20,59 @@ const pageTitle = "Services";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <section class="prose mx-auto max-w-prose mt-28 mb-16 px-8">
+  <section class="mx-auto max-w-prose mt-28 mb-16 px-8">
+    <h1 class="mb-8">{pageTitle}</h1>
+    <p class="px-2 mb-8">
+      All services will come with a consultation and may include a neck,
+      decollete, arm, and hand massage. Multiple sessions and or homecare is
+      required for optimal results.
+    </p>
+    <p class="px-2 mb-8">
+      All areas addressed must be free of active sunburn, open or healing
+      wounds, and rashes. In the case of a rash, please consult a medical
+      professional to identify the condition and confirm that it is not
+      contagious before booking an appointment with us.
+    </p>
+    <div class="flex flex-col gap-6">
+      <ServiceListing items={mainServices} />
+      <div class="flex justify-center">
+        <LinkHomePage href="/enzo-glow-test/contact" text="Book Now" />
+      </div>
+    </div>
+  </section>
+  <section class="mx-auto max-w-prose mb-16 px-8">
+    <h1 class="mb-8">Add-Ons</h1>
+    <div class="flex flex-col gap-6">
+      <ServiceListing items={addOns} />
+      <div class="flex justify-center">
+        <LinkHomePage href="/enzo-glow-test/contact" text="Book Now" />
+      </div>
+    </div>
+  </section>
+  <section class="prose mx-auto max-w-prose px-8" id="service-policies">
     <h1 class="mb-8">Service Policies</h1>
     <p>
-      All no-shows and cancellations made
-      <span class="font-bold text-enzo-green-light">less than 24 hours</span>
-      of scheduled appointments will be charged an
-      <span class="font-bold text-enzo-green-light">additional 20%</span>
-      of the service cost.
-    </p>
-    <p>
       A
-      <span class="font-bold text-enzo-green-light">30% deposit is required</span
+      <span class="font-bold text-enzo-green-light"
+        >50% deposit is required</span
       >
-      for all services. Deposits are
-      <span class="font-bold text-enzo-green-light">non-refundable</span>
-      .
+      for all services, which will be applied towards the service and are
+      <span class="font-bold text-enzo-green-light">non-refundable</span>.
+      Consultation services must be paid in full to book a time.
     </p>
     <p>
-      Our products, equipment, and time in the clinic is valuable, so we ask
-      that you plan accordingly or communicate with us with ample notice to
-      avoid product waste.
+      Late arrivals of more than 10 minutes will be rescheduled, and the deposit
+      will be applied towards the next appointment. There will be reminders sent
+      leading up to your appointment to give you the opportunity to reschedule
+      if needed.
     </p>
     <p>
-      There will be reminders leading up to your appointment to give you the
-      opportunity to reschedule if needed.
+      The time and products in the office is valuable and we request that you
+      plan accordingly or communicate with us in consideration of other clients
+      on the schedule and waiting list.
     </p>
-  </section>
-  <section class="mx-auto max-w-prose px-8">
-    <h1 class="mb-8">{pageTitle}</h1>
-    <div class="flex flex-col gap-6">
-      <ServiceListing items={services} />
-    </div>
+    <p>
+      Please review <a href="/enzo-glow-test/policies">all of our policies.</a>
+    </p>
   </section>
 </BaseLayout>

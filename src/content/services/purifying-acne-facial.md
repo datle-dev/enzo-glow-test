@@ -1,14 +1,15 @@
 ---
-title: 'Purifying Acne Facial'
-summary: 'For individuals with acne. May include a double cleanse, mask, extractions, serums, or specialty treatments.'
-category: 'Skin Care'
+title: "Purifying Acne Facial"
+anchorId: "purifying-acne-facial"
+popUp: ""
+category: "Skin Care"
 cost: 135
 duration: 60
-imgSrc: '../../assets/services/purifying-acne-facial.jpg'
-imgAlt: 'Purifying Acne Facial'
+order: 3
+showPopUp: false
+isAddOn: false
+imgSrc: "../../assets/services/purifying-acne-facial.jpg"
+imgAlt: "Purifying Acne Facial"
 ---
 
-For individuals experiencing varying levels of acne.
-Depending on your current skin condition, this treatment may include a double cleanse, light enzyme mask, extractions, serums, and 1 or 2 specialty treatments.
-
-Multiple treatments and home care is necessary for optimal results.
+For teens (14+) and adults with mild to moderately severe acne. This service calms inflammation and rebalances the skin to prevent more acne from developing, encourage faster healing, and arrest the maturation of existing acne.

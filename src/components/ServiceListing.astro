@@ -5,6 +5,7 @@ interface Props {
   items: CollectionEntry<"services">[];
 }
 
+import ServiceNonModal from "./ServiceNonModal.astro";
 import ServiceModal from "./ServiceModal.astro";
 
 const { items } = Astro.props;
@@ -13,15 +14,29 @@ const { items } = Astro.props;
 {
   items.map(async (item) => {
     const { Content } = await item.render();
-    return (
-      <ServiceModal
-        title={item.data.title}
-        cost={item.data.cost}
-        summary={item.data.summary}
-        duration={item.data.duration}
-      >
-        <Content />
-      </ServiceModal>
-    );
+    if (item.data.showPopUp) {
+      return (
+        <ServiceModal
+          title={item.data.title}
+          cost={item.data.cost}
+          popUp={item.data.popUp}
+          duration={item.data.duration}
+          anchorId={item.data.anchorId}
+        >
+          <Content />
+        </ServiceModal>
+      );
+    } else {
+      return (
+        <ServiceNonModal
+          title={item.data.title}
+          cost={item.data.cost}
+          duration={item.data.duration}
+          anchorId={item.data.anchorId}
+        >
+          <Content />
+        </ServiceNonModal>
+      );
+    }
   })
 }

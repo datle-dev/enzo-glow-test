@@ -4,24 +4,27 @@ import { Icon } from "astro-icon/components";
 import LinkHomePage from "./LinkHomePage.astro";
 
 interface Props {
-  title: string,
-  cost: number,
-  summary: string,
-  duration: number,
+  title: string;
+  cost: number;
+  popUp: string;
+  duration: number;
+  anchorId: string;
 }
 
-const {
-  title,
-  cost,
-  summary,
-  duration,
-} = Astro.props;
+const { title, cost, popUp, duration, anchorId } = Astro.props;
 ---
 
-<article class="flex flex-col gap-2">
+<article class="flex flex-col gap-2" id={anchorId}>
   <div x-data="{modalIsOpen: false}">
-    <button @click="modalIsOpen = true" type="button" class="flex justify-between w-full hover:bg-light/20 transition-all duration-300 ease-in-out p-2">
-      <h3 class="text-2xl text-left">{title}</h3>
+    <button
+      @click="modalIsOpen = true"
+      type="button"
+      class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 w-full hover:bg-light/20 transition-all duration-300 ease-in-out p-2"
+    >
+      <div class="flex items-center gap-4">
+        <h3 class="text-2xl text-left">{title}</h3>
+        <Icon name="ri:information-2-fill" class="size-6 shrink-0" />
+      </div>
       <p class="text-2xl">${cost}</p>
     </button>
     <div
@@ -31,7 +34,7 @@ const {
       x-trap.inert.noscroll="modalIsOpen"
       @keydown.esc.window="modalIsOpen = false"
       @click.self="modalIsOpen = false"
-      class="fixed inset-0 z-30 flex items-end sm:items-center justify-center bg-night/20 backdrop-blur-md p-4 pb-8 lg:p-8"
+      class="fixed inset-0 z-30 flex items-center sm:items-center justify-center bg-night/20 backdrop-blur-md p-4 pb-8 lg:p-8"
       role="dialog"
       aria-modal="true"
       aria-labelledby="defaultModalTitle"
@@ -47,16 +50,16 @@ const {
         <!-- Dialog Header -->
         <section class="flex justify-between items-center">
           <h3 class="text-2xl">{title}</h3>
-          <button @click="modalIsOpen = false" aria-label="close modal" class="hover:text-enzo-green-light transition-all duration-300 ease-in-out">
-            <Icon
-              name="ri:close-line"
-              class="size-10"
-              aria-hidden="true"
-            />
+          <button
+            @click="modalIsOpen = false"
+            aria-label="close modal"
+            class="hover:text-enzo-green-light transition-all duration-300 ease-in-out"
+          >
+            <Icon name="ri:close-line" class="size-10" aria-hidden="true" />
           </button>
         </section>
         <section class="prose">
-          <slot />
+          <p>{popUp}</p>
         </section>
         <section class="flex flex-col items-center">
           <LinkHomePage href="/enzo-glow-test/contact" text="Book Now" />
@@ -64,6 +67,8 @@ const {
       </div>
     </div>
   </div>
-  <p class="px-2">{summary}</p>
+  <div class="prose px-2">
+    <slot />
+  </div>
   <p class="text-sm text-light/50 px-2">{duration} min</p>
 </article>

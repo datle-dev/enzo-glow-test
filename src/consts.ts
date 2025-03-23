@@ -25,6 +25,12 @@ export const PORTFOLIO: Page = {
   DESCRIPTION: "Pictures of our work",
 };
 
+export const POLICIES: Page = {
+  TITLE: "Policies",
+  DESCRIPTION:
+    "Policies for attire, payment, late arrivals, cancellations, and no shows",
+};
+
 export const FAQ: Page = {
   TITLE: "Frequently Asked Questions",
   DESCRIPTION: "Answers to common questions",
@@ -52,6 +58,10 @@ export const LINKS: Links = [
   //   TEXT: "Portfolio",
   //   HREF: "/enzo-glow-test/portfolio",
   // },
+  {
+    TEXT: "Policies",
+    HREF: "/enzo-glow-test/policies",
+  },
   {
     TEXT: "FAQs",
     HREF: "/enzo-glow-test/faqs",

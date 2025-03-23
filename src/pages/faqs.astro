@@ -5,15 +5,20 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Accordion from "@/components/Accordion.astro";
 import AccordionItems from "@/components/AccordionItems.astro";
 
-const faqBookingEntries = await getCollection("faq", ({ id }) => {
+let faqBookingEntries = await getCollection("faq", ({ id }) => {
   return id.startsWith("booking/");
 });
-const faqServicesEntries = await getCollection("faq", ({ id }) => {
+faqBookingEntries.sort((a, b) => a.data.order - b.data.order);
+
+let faqServicesEntries = await getCollection("faq", ({ id }) => {
   return id.startsWith("services/");
 });
-const faqProductsEntries = await getCollection("faq", ({ id }) => {
+faqServicesEntries.sort((a, b) => a.data.order - b.data.order);
+
+let faqProductsEntries = await getCollection("faq", ({ id }) => {
   return id.startsWith("products/");
 });
+faqProductsEntries.sort((a, b) => a.data.order - b.data.order);
 
 const pageTitle = "FAQs";
 ---

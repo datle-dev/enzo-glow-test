@@ -1,12 +1,18 @@
 ---
-title: 'Gala Prep Facial'
-summary: 'Get ready for your special event! A double cleanse ensures your skin is ready for makeup application, followed by a mask, serums, and moisturizers along with facial, arm, and hand massages.'
-category: 'Skin Care'
-cost: 165
+title: "Gala Prep Facial"
+anchorId: "gala-prep-facial"
+popUp: ""
+category: "Skin Care"
+cost: 185
 duration: 75
-imgSrc: '../../assets/services/gala-prep-facial.jpg'
-imgAlt: 'Gala Prep Facial'
+order: 4
+showPopUp: false
+isAddOn: false
+imgSrc: "../../assets/services/gala-prep-facial.jpg"
+imgAlt: "Gala Prep Facial"
 ---
 
-Get your skin ready for your special events with us!
-This service involves a double cleansing with enzymes to remove dead skin cells and smooth your skin for makeup application, followed by a lifting and firming peptide rich mask, a plumping, lymphatic facial massage, hydrating serums and moisturizers, and an arm and hand massage. 
+This peptide-packed service increases microcirculation to aid in the delivery of vital nutrients and support natural collagen and elastin production while providing an immediate, visible lift.
+This non-invasive and pain free service is perfect for preparing for a big event!
+
+Use of the recommended homecare line, and a series of three services, spaced out two weeks apart for longer-lasting results.
