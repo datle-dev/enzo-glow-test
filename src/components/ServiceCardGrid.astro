@@ -5,6 +5,8 @@ import enzoSignatureFacialImg from "@/assets/services/enzo-signature-facial.jpg"
 import backFacialImg from "@/assets/services/back-facial.jpg";
 import purifyingAcneFacialImg from "@/assets/services/purifying-acne-facial.jpg";
 import toolsImg from "@/assets/services/tools.jpg";
+import browThreadingImg from "@/assets/services/brow-threading.png";
+import lashesImg from "@/assets/services/lashes.jpeg";
 ---
 
 <div class="w-full flex flex-col sm:grid sm:grid-rows-2 sm:grid-cols-3 gap-4">
@@ -47,24 +49,7 @@ import toolsImg from "@/assets/services/tools.jpg";
     class="relative h-80 w-full row-start-2 row-end-3 col-start-1 col-end-2 rounded shadow-md shadow-night group overflow-hidden hover:text-light"
   >
     <Image
-      src={toolsImg}
-      alt="threading"
-      class="h-full w-full object-cover rounded group-hover:scale-110 transition-all ease-in-out duration-300"
-    />
-    <div
-      class="absolute inset-0 h-full w-full bg-black opacity-40 group-hover:opacity-20 transition-all ease-in-out duration-300 rounded"
-    >
-    </div>
-    <div class="absolute inset-0 h-full w-full flex justify-start items-end">
-      <p class="font-serif text-4xl p-4">Threading</p>
-    </div>
-  </a>
-  <a
-    href="/enzo-glow-test/services"
-    class="relative h-80 w-full row-start-2 row-end-3 col-start-2 col-end-4 rounded shadow-md shadow-night group overflow-hidden hover:text-light"
-  >
-    <Image
-      src={purifyingAcneFacialImg}
+      src={lashesImg}
       alt="lash lift"
       class="h-full w-full object-cover rounded group-hover:scale-110 transition-all ease-in-out duration-300"
     />
@@ -74,6 +59,23 @@ import toolsImg from "@/assets/services/tools.jpg";
     </div>
     <div class="absolute inset-0 h-full w-full flex justify-start items-end">
       <p class="font-serif text-4xl p-4">Lashes</p>
+    </div>
+  </a>
+  <a
+    href="/enzo-glow-test/services"
+    class="relative h-80 w-full row-start-2 row-end-3 col-start-2 col-end-4 rounded shadow-md shadow-night group overflow-hidden hover:text-light"
+  >
+    <Image
+      src={browThreadingImg}
+      alt="threading"
+      class="h-full w-full object-cover rounded group-hover:scale-110 transition-all ease-in-out duration-300"
+    />
+    <div
+      class="absolute inset-0 h-full w-full bg-black opacity-40 group-hover:opacity-20 transition-all ease-in-out duration-300 rounded"
+    >
+    </div>
+    <div class="absolute inset-0 h-full w-full flex justify-start items-end">
+      <p class="font-serif text-4xl p-4">Threading</p>
     </div>
   </a>
 </div>

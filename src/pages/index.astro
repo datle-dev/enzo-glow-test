@@ -5,6 +5,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import LinkHomePage from "@/components/LinkHomePage.astro";
 
 import heroImg from "@/assets/hero.jpg";
+import portraitImg from "@/assets/portrait.jpg";
 import enzoGlowLogo from "@/assets/Enzo-Glow-Logo.svg";
 
 import ServiceCardGrid from "@/components/ServiceCardGrid.astro";
@@ -35,13 +36,22 @@ const pageTitle = "Home";
   </section>
   <section class="flex flex-col items-center gap-6 p-8">
     <h2 class="text-6xl text-center">Glow with Enzo.</h2>
-    <div class="prose max-w-prose">
+    <div class="flex flex-col prose max-w-prose">
+      <Image
+        src={portraitImg}
+        alt="tiffany nguyen"
+        class="h-48 w-48 self-center object-cover rounded mb-6"
+      />
       <p>
-        Skin care does not have to be complicated! Allow us at Enzo Glow to
-        simplify the process for you through education and suggestions that fit
-        your lifestyle, skin concerns, and budget. We focus on quality
-        ingredients and product formulations, and we pay attention to technique,
-        efficacy, and breakthroughs from research and development.
+        Welcome to Enzo Glow! My name is Tiffany, Licensed Aesthetician and
+        owner.
+      </p>
+      <p>
+        Skin care does not have to be complicated! At Enzo Glow, I simplify the
+        process for you through education and suggestions that fit your
+        lifestyle, skin concerns, and budget. I focus on quality ingredients and
+        product formulations, and I pay attention to technique, efficacy, and
+        breakthroughs from research and development.
       </p>
     </div>
     <div class="flex flex-col sm:flex-row gap-6">
@@ -58,13 +68,13 @@ const pageTitle = "Home";
     <h2 class="text-6xl text-center">Skin Health-Focused</h2>
     <div class="prose max-w-prose">
       <p>
-        Welcome to Enzo Glow! I take great pride in helping individuals of all
-        skin types and concerns to achieve visible results through a holistic,
-        gentle, and evidence-based approach that is consistently focused on the
-        overall health of the skin. Enzo Glow offers custom tailored services
-        for effective treatments. I will also take the time to educate you to
-        ensure that you understand how to take care of your skin based on your
-        current lifestyle, medical status, and environmental factors.
+        I take great pride in helping individuals of all skin types and concerns
+        to achieve visible results through a holistic, gentle, and
+        evidence-based approach that is consistently focused on the overall
+        health of the skin. Enzo Glow offers custom tailored services for
+        effective treatments. I will also take the time to educate you to ensure
+        that you understand how to take care of your skin based on your current
+        lifestyle, medical status, and environmental factors.
       </p>
       <p>
         I want you to love YOUR skin! It is not about chasing “perfection”,
