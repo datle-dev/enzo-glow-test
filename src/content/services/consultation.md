@@ -3,9 +3,9 @@ title: "Consultation"
 anchorId: "consultation"
 popUp: ""
 category: "Skin Care"
-cost: 45
-deposit: 30
-duration: 30
+cost: 30
+deposit: 5
+duration: 15
 order: 9
 showPopUp: false
 isAddOn: false

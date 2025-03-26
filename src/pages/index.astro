@@ -5,7 +5,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import LinkHomePage from "@/components/LinkHomePage.astro";
 
 import heroImg from "@/assets/hero.jpg";
-import portraitImg from "@/assets/portrait.jpg";
+import portraitAltImg from "@/assets/portrait-alt.jpg";
 import enzoGlowLogo from "@/assets/Enzo-Glow-Logo.svg";
 
 import ServiceCardGrid from "@/components/ServiceCardGrid.astro";
@@ -38,9 +38,9 @@ const pageTitle = "Home";
     <h2 class="text-6xl text-center">Glow with Enzo.</h2>
     <div class="flex flex-col prose max-w-prose">
       <Image
-        src={portraitImg}
+        src={portraitAltImg}
         alt="tiffany nguyen"
-        class="h-48 w-48 self-center object-cover rounded mb-6"
+        class="h-64 w-full self-center object-cover rounded mb-6"
       />
       <p>
         Welcome to Enzo Glow! My name is Tiffany, Licensed Aesthetician and
@@ -72,29 +72,30 @@ const pageTitle = "Home";
         to achieve visible results through a holistic, gentle, and
         evidence-based approach that is consistently focused on the overall
         health of the skin. Enzo Glow offers custom tailored services for
-        effective treatments. I will also take the time to educate you to ensure
-        that you understand how to take care of your skin based on your current
+        effective treatments. I take the time to educate you to ensure that you
+        understand how to take care of your skin based on your current
         lifestyle, medical status, and environmental factors.
       </p>
       <p>
-        I want you to love YOUR skin! It is not about chasing “perfection”,
-        rather all about committing to your health and consistency through
-        treatment sessions and home care. It is an honor to be a part of your
-        journey and I look forward to helping you celebrate the best version of
-        yourself.
+        My goal is to help you to love YOUR skin! It is not about chasing
+        “perfection", rather all about committing to your health and consistency
+        through treatment sessions and home care. It is an honor to be a part of
+        your journey and I look forward to helping you celebrate the best
+        version of yourself.
       </p>
       <p>
-        Skin care does NOT have to be complicated or expensive! I simplify the
-        process for you through basic client education and minimal suggestions
-        that fit your lifestyle, skin concerns, and budget. I focus on quality
-        ingredients, product formulation, and routine customization.
+        Skin care does NOT have to be complicated or expensive! Enzo Glow
+        simplifies the process for you through client education and minimal
+        suggestions that fit your lifestyle, skin concerns, and budget. My focus
+        for recommendations is on quality ingredients, product formulation, and
+        compatibility for your skin and goals.
       </p>
       <p>
-        In addition to our services, Enzo Glow proudly offers oncology-approved
-        facial and body services for those undergoing cancer treatment with
-        certification from Oncology Spa Solutions. Through training and licensed
-        practice, Enzo Glow specializes in providing relief to medically
-        reactive skin.
+        In addition to my regular services, I am proud to offer
+        oncology-approved facial and body services for those undergoing cancer
+        treatment with certification from Oncology Spa Solutions. Through
+        training and licensed practice, I specialize in providing relief to
+        medically reactive skin.
       </p>
     </div>
     <LinkHomePage href="/enzo-glow-test/contact" text="Book Now" />
